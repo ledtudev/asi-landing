@@ -1,59 +1,56 @@
-import { motion } from 'framer-motion';
-import { GraduationCap, Rocket, Settings } from 'lucide-react';
+'use client';
 
-export default function AdditionalServicesSection() {
+import { motion } from 'framer-motion';
+import { Zap, BarChart2, Cloud } from 'lucide-react';
+
+export default function SaaSServicesSection() {
   const services = [
     {
-      icon: Rocket,
-      title: 'Hạ tầng chạy AI cho người có kỹ năng',
+      icon: Zap,
+      title: 'Tối ưu quy trình doanh nghiệp',
       description:
-        'Cung cấp môi trường và công cụ cần thiết để chạy và triển khai AI hiệu quả, dành cho đội ngũ đã có kiến thức về AI.',
-      titleColor: 'text-orange-500',
+        'Tự động hóa các quy trình nội bộ, giảm thời gian xử lý và tăng hiệu quả vận hành.',
+      gradient: 'from-orange-400 to-orange-600',
     },
     {
-      icon: GraduationCap,
-      title: 'Đào tạo về AI & các ngành nghề liên quan',
+      icon: BarChart2,
+      title: 'Báo cáo & phân tích thông minh',
       description:
-        'Các khóa học thực tiễn giúp doanh nghiệp và cá nhân hiểu - áp dụng - làm chủ công nghệ AI vào công việc hàng ngày.',
-      titleColor: 'text-blue-600',
+        'Dashboard trực quan, số liệu cập nhật thời gian thực, giúp ra quyết định nhanh và chính xác hơn.',
+      gradient: 'from-blue-400 to-blue-600',
     },
     {
-      icon: Settings,
-      title: 'Thiết kế giải pháp riêng theo ngành',
+      icon: Cloud,
+      title: 'Tích hợp linh hoạt',
       description:
-        'Phát triển hệ thống AI tùy chỉnh cho từng lĩnh vực cụ thể: bán lẻ, F&B, giáo dục, du lịch, dịch vụ...',
-      titleColor: 'text-orange-500',
+        'Kết nối dễ dàng với các phần mềm và công cụ hiện có, hỗ trợ đa nền tảng và mở rộng khi cần.',
+      gradient: 'from-green-400 to-green-600',
     },
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center space-y-8 mb-16"
+          className="text-center space-y-6 mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-blue-600 mb-6">
-            Dịch vụ bổ sung
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+            Dịch vụ SaaS nâng cao cho doanh nghiệp
           </h2>
-
-          <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-            Cung cấp hạ tầng, đào tạo và thiết kế giải pháp AI riêng cho từng
-            doanh nghiệp - kể cả khi bạn chưa có đội kỹ thuật.
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            Các giải pháp SaaS giúp tự động hóa quy trình, phân tích dữ liệu
+            thông minh và tích hợp linh hoạt, giúp doanh nghiệp vận hành hiệu
+            quả mà không cần đội ngũ kỹ thuật lớn.
           </p>
         </motion.div>
 
         {/* Service Cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -61,29 +58,40 @@ export default function AdditionalServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ y: -2, scale: 1.005 }}
-              className="bg-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              whileHover={{
+                scale: 1.06,
+                y: -6,
+                rotate: 1.5,
+                boxShadow: '0px 20px 40px rgba(0,0,0,0.12)',
+              }}
+              className="relative bg-white rounded-2xl p-8 overflow-hidden cursor-pointer"
             >
+              {/* Gradient Glow Overlay */}
+              <div
+                className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none`}
+              ></div>
+
+              {/* Icon */}
               <motion.div
-                whileHover={{ scale: 1.05, rotate: 2 }}
-                transition={{ duration: 0.3 }}
-                className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors duration-300"
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+                className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 bg-gradient-to-tr ${service.gradient} text-white shadow-lg`}
               >
-                <service.icon className="w-8 h-8 text-blue-600" />
+                <service.icon className="w-8 h-8" />
               </motion.div>
 
-              <h3
-                className={`text-xl font-bold mb-4 text-center group-hover:${service.titleColor} transition-colors duration-300`}
-              >
+              {/* Title */}
+              <h3 className="text-xl font-bold mb-4 text-center text-gray-900">
                 {service.title}
               </h3>
 
-              <p className="text-gray-700 leading-relaxed text-center group-hover:text-gray-900 transition-colors duration-300">
+              {/* Description */}
+              <p className="text-gray-700 leading-relaxed text-center">
                 {service.description}
               </p>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

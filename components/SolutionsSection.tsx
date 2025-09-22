@@ -1,5 +1,6 @@
 import { useConsultation } from '@/contexts/ConsultationContext';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function SolutionsSection() {
   const { openConsultation } = useConsultation();
@@ -8,17 +9,14 @@ export default function SolutionsSection() {
       title: 'AI Chatbot Thông Minh',
       highlighted: 'Thông Minh',
       description:
-        'Tự động tư vấn sản phẩm, trả lời inbox, chốt đơn, báo cáo hiệu suất. Phù hợp cho thời trang, F&B, giáo dục, du lịch - không cần code.',
+        'AI AGENT có khả năng tư vấn sản phẩm, chốt đơn, tạo báo cáo... phù hợp với nhiều ngành hàng: thời trang, F&B, giáo dục, du lịch.',
       features: [
-        'Tạo chatbot trong vài phút',
-        'Cá nhân hóa theo ngành hàng: thời trang, F&B, du lịch, giáo dục...',
-        'Tự động tư vấn sản phẩm, trả lời inbox, chốt đơn, báo cáo hiệu suất.',
+        'Chủ shop tạo chatbot dễ dàng trong vài phút',
+        'AI Agent tuỳ chỉnh theo ngành hàng: hỗ trợ và tự động hoá nghiệp vụ sales, chăm sóc khách hàng, báo cáo… như một NHÂN VIÊN ảo tích hợp đa nền tảng.',
+        'Training AI bằng cách nhập kiến thức sản phẩm',
       ],
-      icon: '🤖',
-      bgColor: 'bg-blue-50',
-      borderColor: 'border-blue-200',
       imagePosition: 'left',
-      laptopContent: 'chatbot',
+      urlImage: '/images/solution-img-1',
     },
     {
       title: 'AI Quản lý Marketing & Fanpage',
@@ -34,7 +32,7 @@ export default function SolutionsSection() {
       bgColor: 'bg-orange-50',
       borderColor: 'border-orange-200',
       imagePosition: 'right',
-      laptopContent: 'marketing',
+      urlImage: '/images/solution-img-2',
     },
     {
       title: 'AI cho Giáo dục',
@@ -50,7 +48,7 @@ export default function SolutionsSection() {
       bgColor: 'bg-green-50',
       borderColor: 'border-green-200',
       imagePosition: 'left',
-      laptopContent: 'education',
+      urlImage: '/images/solution-img-3',
     },
     {
       title: 'AI Phân tích Quảng cáo cho Agency',
@@ -66,7 +64,7 @@ export default function SolutionsSection() {
       bgColor: 'bg-purple-50',
       borderColor: 'border-purple-200',
       imagePosition: 'right',
-      laptopContent: 'analytics',
+      urlImage: '/images/solution-img-4',
     },
     {
       title: 'AI cho Quản trị Doanh nghiệp',
@@ -82,191 +80,9 @@ export default function SolutionsSection() {
       bgColor: 'bg-indigo-50',
       borderColor: 'border-indigo-200',
       imagePosition: 'left',
-      laptopContent: 'enterprise',
+      urlImage: '/images/solution-img-5',
     },
   ];
-
-  // Component for laptop mockup
-  const LaptopMockup = ({
-    content,
-    className = '',
-  }: {
-    content: string;
-    className?: string;
-  }) => {
-    const renderContent = () => {
-      switch (content) {
-        case 'chatbot':
-          return (
-            <div className="bg-white rounded-lg overflow-hidden h-80">
-              <div className="bg-gray-100 px-4 py-2 flex items-center space-x-2 border-b">
-                <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <div className="flex-1 bg-white rounded px-3 py-1 text-xs text-gray-500">
-                  ASI.ai/dashboard
-                </div>
-              </div>
-              <div className="flex h-full">
-                <div className="w-16 bg-blue-900 flex flex-col items-center py-4 space-y-4">
-                  <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white text-xs">🏠</span>
-                  </div>
-                  <div className="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white text-xs">💬</span>
-                  </div>
-                  <div className="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white text-xs">⚙️</span>
-                  </div>
-                </div>
-                <div className="flex-1 p-4">
-                  <div className="space-y-3">
-                    <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-                    <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-                    <div className="h-4 bg-gray-200 rounded w-2/3"></div>
-                    <div className="h-4 bg-gray-200 rounded w-1/3"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        case 'marketing':
-          return (
-            <div className="bg-white rounded-lg overflow-hidden h-80">
-              <div className="bg-gray-100 px-4 py-2 flex items-center space-x-2 border-b">
-                <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <div className="flex-1 bg-white rounded px-3 py-1 text-xs text-gray-500">
-                  marketing.smartselly.ai
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold mb-4">Chiến dịch 1</h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm">Tiến độ</span>
-                    <span className="text-sm font-bold">3/10</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-blue-500 h-2 rounded-full w-3/10"></div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-blue-600">
-                        1.2K
-                      </div>
-                      <div className="text-xs text-gray-500">Lượt xem</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-green-600">
-                        2.5K
-                      </div>
-                      <div className="text-xs text-gray-500">Tương tác</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        case 'education':
-          return (
-            <div className="bg-white rounded-lg overflow-hidden h-80">
-              <div className="bg-gray-100 px-4 py-2 flex items-center space-x-2 border-b">
-                <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <div className="flex-1 bg-white rounded px-3 py-1 text-xs text-gray-500">
-                  education.smartselly.ai
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold mb-4">3D Design</h3>
-                <div className="bg-gray-100 rounded-lg p-4 h-48 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-4xl mb-2">🍣</div>
-                    <div className="text-sm text-gray-600">
-                      Chương 1: Làm Quen Với Blender
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        case 'analytics':
-          return (
-            <div className="bg-white rounded-lg overflow-hidden h-80">
-              <div className="bg-gray-100 px-4 py-2 flex items-center space-x-2 border-b">
-                <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <div className="flex-1 bg-white rounded px-3 py-1 text-xs text-gray-500">
-                  analytics.smartselly.ai
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold mb-4">Báo cáo hiệu suất</h3>
-                <div className="space-y-4">
-                  <div className="h-20 bg-gray-100 rounded-lg flex items-center justify-center">
-                    <div className="text-sm text-gray-500">
-                      📊 Biểu đồ phân tích
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center">
-                      <div className="text-lg font-bold">3.8K</div>
-                      <div className="text-xs text-gray-500">Lượt click</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-lg font-bold">2.1K</div>
-                      <div className="text-xs text-gray-500">Chuyển đổi</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        case 'enterprise':
-          return (
-            <div className="bg-white rounded-lg overflow-hidden h-80">
-              <div className="bg-gray-100 px-4 py-2 flex items-center space-x-2 border-b">
-                <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <div className="flex-1 bg-white rounded px-3 py-1 text-xs text-gray-500">
-                  enterprise.smartselly.ai
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold mb-4">Quản lý dự án</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-green-500 rounded"></div>
-                    <span className="text-sm">Task 1 - Hoàn thành</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-yellow-500 rounded"></div>
-                    <span className="text-sm">Task 2 - Đang xử lý</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-gray-300 rounded"></div>
-                    <span className="text-sm">Task 3 - Chờ xử lý</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        default:
-          return <div className="h-80 bg-gray-100 rounded-lg"></div>;
-      }
-    };
-
-    return (
-      <div className={`bg-gray-800 rounded-xl p-3 shadow-2xl ${className}`}>
-        {renderContent()}
-      </div>
-    );
-  };
 
   return (
     <section
@@ -282,9 +98,13 @@ export default function SolutionsSection() {
           viewport={{ once: true }}
           className="text-center mb-20 pb-10"
         >
-          <h2 className="text-5xl pt-28 md:text-6xl font-bold text-green-600 mb-8">
+          <h2
+            className="text-5xl pt-28 md:text-6xl font-bold mb-8 
+              bg-gradient-to-r from-[#13B34E] to-[#1677FF] bg-clip-text text-transparent"
+          >
             Giải pháp nổi bật
           </h2>
+
           <p className="text-xl text-gray-700 max-w-5xl mx-auto leading-relaxed mb-10">
             Các sản phẩm AI đa dạng của chúng tôi bao gồm: AI Agent chatbot, AI
             quản lý fanpage, AI hỗ trợ tạo nội dung, AI phân tích quảng cáo và
@@ -330,9 +150,9 @@ export default function SolutionsSection() {
                 }`}
               >
                 <div>
-                  <h3 className="text-4xl md:text-5xl font-bold text-blue-600 mb-6">
+                  <h3 className="text-4xl md:text-5xl font-bold mb-6">
                     {solution.title.split(solution.highlighted)[0]}
-                    <span className="text-orange-500">
+                    <span className="bg-gradient-to-r from-[#FF9616] to-[#1677FF] bg-clip-text text-transparent">
                       {solution.highlighted}
                     </span>
                     {solution.title.split(solution.highlighted)[1]}
@@ -373,69 +193,21 @@ export default function SolutionsSection() {
                 </div>
               </div>
 
-              {/* Laptop Mockup */}
+              {/* Visual */}
               <div
                 className={`${
                   solution.imagePosition === 'right' ? 'lg:col-start-1' : ''
                 }`}
               >
                 <motion.div
+                  initial={{ opacity: 0, scale: 0.98, y: 16 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, ease: 'easeOut' }}
                   whileHover={{ scale: 1.01 }}
-                  transition={{ duration: 0.3 }}
                   className="relative"
                 >
-                  <LaptopMockup content={solution.laptopContent} />
-
-                  {/* Floating Chat Card for Chatbot */}
-                  {solution.laptopContent === 'chatbot' && (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                      whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.3 }}
-                      viewport={{ once: true }}
-                      whileHover={{ scale: 1.02, y: -2 }}
-                      className="absolute -right-8 top-8 bg-white rounded-2xl shadow-2xl border border-gray-200 p-4 w-64"
-                    >
-                      <div className="bg-blue-500 rounded-t-2xl -m-4 mb-3 p-3">
-                        <div className="flex items-center space-x-2">
-                          <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
-                            <span className="text-blue-500 text-sm">🤖</span>
-                          </div>
-                          <span className="text-white text-sm font-semibold">
-                            AI Assistant
-                          </span>
-                        </div>
-                      </div>
-                      <div className="space-y-3">
-                        <div className="flex items-start space-x-2">
-                          <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                            <span className="text-white text-xs">⚡</span>
-                          </div>
-                          <div className="bg-gray-100 rounded-lg p-2 text-xs">
-                            <div className="h-2 bg-gray-300 rounded w-full mb-1"></div>
-                            <div className="h-2 bg-gray-300 rounded w-3/4"></div>
-                          </div>
-                        </div>
-                        <div className="flex items-start space-x-2">
-                          <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                            <span className="text-white text-xs">👤</span>
-                          </div>
-                          <div className="bg-blue-100 rounded-lg p-2 text-xs">
-                            <div className="h-2 bg-blue-300 rounded w-full mb-1"></div>
-                            <div className="h-2 bg-blue-300 rounded w-2/3"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="mt-4 flex items-center space-x-2">
-                        <div className="flex-1 bg-gray-100 rounded-lg px-3 py-2 text-xs text-gray-500">
-                          Nhập tin nhắn...
-                        </div>
-                        <button className="w-6 h-6 bg-blue-500 rounded-lg flex items-center justify-center">
-                          <span className="text-white text-xs">→</span>
-                        </button>
-                      </div>
-                    </motion.div>
-                  )}
+                  <SolutionStillImage src={`${solution.urlImage}.png`} />
                 </motion.div>
               </div>
             </div>
@@ -443,5 +215,26 @@ export default function SolutionsSection() {
         ))}
       </div>
     </section>
+  );
+}
+
+function SolutionStillImage({ src }: { src: string }) {
+  return (
+    <div className="relative rounded-3xl border border-gray-100 bg-gradient-to-br from-sky-50 to-white shadow-[0_40px_80px_-30px_rgba(0,0,0,0.25)]">
+      {/* Ambient background blob for depth */}
+      <div className="pointer-events-none absolute -top-10 -left-6 h-40 w-40 rounded-full bg-sky-100 blur-3xl opacity-60" />
+      <div className="pointer-events-none absolute -bottom-8 -right-8 h-44 w-44 rounded-full bg-blue-100 blur-3xl opacity-60" />
+
+      {/* Image frame */}
+      <div className="relative h-64 sm:h-72 md:h-96 lg:h-[28rem] flex items-center justify-center p-4 md:p-6">
+        <Image
+          src={src}
+          alt="solution preview"
+          className="max-h-full w-auto object-contain drop-shadow-xl"
+          height={400}
+          width={400}
+        />
+      </div>
+    </div>
   );
 }

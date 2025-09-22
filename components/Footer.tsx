@@ -1,5 +1,8 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import Logo from './Logo';
 
 export default function Footer() {
   return (
@@ -15,37 +18,39 @@ export default function Footer() {
             className="space-y-6"
           >
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-xl">S</span>
-              </div>
+              <Logo className="w-10 w-10 rounded-lg" />
+
               <span className="text-2xl font-bold text-blue-600">
-                SmartSelly
+                ASI Smart Sales
               </span>
             </div>
 
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
+            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+              <p>
+                <span className="font-medium">Tên đầy đủ: </span>
+                Công ty TNHH tư vấn và giải pháp bán hàng thông minh ASI
+              </p>
+              <p>
+                <span className="font-medium">Tên tiếng nước ngoài: </span>
+                ASI SMART SALES CONSULTING AND SOLUTIONS COMPANY LIMITED
+              </p>
+              <p>
+                <span className="font-medium">Tên viết tắt: </span>
+                CTTNHH TVGP BÁN HÀNG THÔNG MINH ASI
+              </p>
+              <p>
+                <span className="font-medium">MST: </span>0111020361
+              </p>
+              <div className="flex items-start space-x-3 mt-2">
                 <MapPin className="w-5 h-5 text-gray-500 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-gray-700 font-medium">Hà Nội</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Tầng 17 Toà nhà Center Building Hapulico Complex, số 1
-                    Nguyễn Huy Tưởng, Phường Thanh Xuân, Thành phố Hà Nội
-                  </p>
-                </div>
+                <p>
+                  Số nhà 7A ngõ 93, Tổ 2, Phường Hoàng Văn Thụ, Quận Hoàng Mai,
+                  Thành phố Hà Nội
+                </p>
               </div>
-
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-gray-500 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-gray-700 font-medium">
-                    Hồ Chí Minh
-                  </p>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Văn Phòng Hồ Chí Minh Số 127, Đường Võ Văn Tần, Phường Xuân
-                    Hòa, TP Hồ Chí Minh
-                  </p>
-                </div>
+                <Mail className="w-5 h-5 text-gray-500 mt-1 flex-shrink-0" />
+                <p>vnasi.group@gmail.com</p>
               </div>
             </div>
           </motion.div>
@@ -67,10 +72,10 @@ export default function Footer() {
                 <Phone className="w-5 h-5 text-gray-500" />
                 <div>
                   <p className="text-sm text-gray-700 font-medium">
-                    Hotline Sale Martech
+                    Hotline tư vấn
                   </p>
                   <p className="text-lg font-semibold text-blue-600">
-                    1900 63 64 65
+                    0973 448 052
                   </p>
                 </div>
               </div>
@@ -79,22 +84,10 @@ export default function Footer() {
                 <Mail className="w-5 h-5 text-gray-500" />
                 <div>
                   <p className="text-sm text-gray-700 font-medium">
-                    Email sale
+                    Email hỗ trợ
                   </p>
                   <p className="text-lg font-semibold text-blue-600">
-                    smartselly@gmail.com
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-gray-500" />
-                <div>
-                  <p className="text-sm text-gray-700 font-medium">
-                    Tổng đài chăm sóc khách hàng
-                  </p>
-                  <p className="text-lg font-semibold text-blue-600">
-                    0123456789
+                    vnasi.group@gmail.com
                   </p>
                 </div>
               </div>
@@ -116,7 +109,7 @@ export default function Footer() {
                 href="#"
                 className="block text-gray-600 hover:text-blue-600 transition-colors duration-300"
               >
-                Chính sách bảo vệ thông tin cá nhân
+                Chính sách bảo mật thông tin
               </a>
               <a
                 href="#"
@@ -128,7 +121,7 @@ export default function Footer() {
                 href="#"
                 className="block text-gray-600 hover:text-blue-600 transition-colors duration-300"
               >
-                Chính sách
+                Chính sách khách hàng
               </a>
               <a
                 href="#"
@@ -149,7 +142,8 @@ export default function Footer() {
           className="mt-12 pt-8 border-t border-gray-200 text-center"
         >
           <p className="text-gray-500 text-sm">
-            © 2024 SmartSelly. All rights reserved.
+            © 2024 Công ty TNHH tư vấn và giải pháp bán hàng thông minh ASI. All
+            rights reserved.
           </p>
         </motion.div>
       </div>

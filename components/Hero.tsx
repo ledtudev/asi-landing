@@ -1,6 +1,8 @@
 import { useConsultation } from '@/contexts/ConsultationContext';
 import { motion } from 'framer-motion';
 import { Clock, MessageCircle, Shield, TrendingUp, Zap } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function HeroSection() {
   const { openConsultation } = useConsultation();
@@ -9,9 +11,9 @@ export default function HeroSection() {
       icon: TrendingUp,
       title: 'Giảm 22% chi phí vận hành',
       description: 'Doanh nghiệp tiết kiệm trung bình 1,2 tỷ VNĐ/năm',
-      color: 'text-gray-900', // chữ đậm sang hơn
-      bgColor: 'bg-white', // nền trắng
-      borderColor: 'border-gray-200', // viền xám nhạt
+      color: 'text-gray-900',
+      bgColor: 'bg-white',
+      borderColor: 'border-gray-200',
       position: '-top-16 -left-20',
     },
     {
@@ -52,7 +54,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-5xl md:text-7xl font-bold leading-tight text-white mb-6"
+            className="text-[9vw] leading-[1.15] sm:text-5xl sm:leading-tight md:text-7xl font-bold text-white mb-6 break-words"
           >
             Chuyển đổi doanh nghiệp{' '}
             <span className="text-cyan-400">bằng Trí tuệ nhân tạo</span>
@@ -63,7 +65,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed"
+            className="text-base sm:text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed"
           >
             Sản phẩm của chúng tôi là bộ giải pháp AI tổng thể, bao gồm nhiều
             Module hỗ trợ doanh nghiệp từ bán hàng đến quản trị doanh nghiệp
@@ -87,7 +89,7 @@ export default function HeroSection() {
               }
               className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold px-8 py-4 rounded-lg text-lg shadow-xl hover:shadow-2xl transition-all duration-200"
             >
-              Đăng ký ngay
+              <Link href="#booking"> Đăng ký ngay</Link>
             </motion.button>
           </motion.div>
 
@@ -118,123 +120,14 @@ export default function HeroSection() {
 
               {/* Dashboard Content */}
               <div className="flex">
-                {/* Sidebar */}
-                <div className="w-64 bg-blue-900 text-white p-6">
-                  <div className="mb-8">
-                    <div className="flex items-center space-x-2 mb-4">
-                      <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-blue-600 rounded flex items-center justify-center">
-                        <span className="text-white font-bold text-xs">S</span>
-                      </div>
-                      <span className="font-semibold">ASI</span>
-                    </div>
-                    <div className="text-xs text-blue-300 uppercase tracking-wider">
-                      AI DASHBOARD
-                    </div>
-                  </div>
-
-                  {/* AI Stats Box */}
-                  <div className="bg-blue-500 rounded-lg p-4 mb-6">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <svg
-                        className="w-4 h-4"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span className="text-sm font-medium">
-                        AI đã xử lý 1,247 cuộc trò chuyện hôm nay
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Navigation Items */}
-                  <div className="space-y-2">
-                    <div className="text-blue-200 text-sm py-2">AI Chatbot</div>
-                    <div className="text-blue-200 text-sm py-2">Phân tích</div>
-                    <div className="text-blue-200 text-sm py-2">Báo cáo</div>
-                    <div className="text-blue-200 text-sm py-2">Cài đặt</div>
-                  </div>
-                </div>
-
-                {/* Main Content Area */}
-                <div className="flex-1 p-8 ">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {/* AI Cards */}
-                    <div className="bg-blue-50 rounded-lg p-6 h-32 border border-blue-200">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-                          <span className="text-white text-sm">🤖</span>
-                        </div>
-                        <span className="font-semibold text-gray-900">
-                          AI Chatbot
-                        </span>
-                      </div>
-                      <p className="text-sm text-gray-600">
-                        247 cuộc trò chuyện
-                      </p>
-                    </div>
-                    <div className="bg-green-50 rounded-lg p-6 h-32 border border-green-200">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-                          <span className="text-white text-sm">📊</span>
-                        </div>
-                        <span className="font-semibold text-gray-900">
-                          Phân tích
-                        </span>
-                      </div>
-                      <p className="text-sm text-gray-600">+15% doanh thu</p>
-                    </div>
-                    <div className="bg-purple-50 rounded-lg p-6 h-32 border border-purple-200">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
-                          <span className="text-white text-sm">📈</span>
-                        </div>
-                        <span className="font-semibold text-gray-900">
-                          Báo cáo
-                        </span>
-                      </div>
-                      <p className="text-sm text-gray-600">12 báo cáo mới</p>
-                    </div>
-                    <div className="bg-orange-50 rounded-lg p-6 h-32 border border-orange-200">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
-                          <span className="text-white text-sm">⚡</span>
-                        </div>
-                        <span className="font-semibold text-gray-900">
-                          Tự động hóa
-                        </span>
-                      </div>
-                      <p className="text-sm text-gray-600">89% hoàn thành</p>
-                    </div>
-                    <div className="bg-red-50 rounded-lg p-6 h-32 border border-red-200">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
-                          <span className="text-white text-sm">🎯</span>
-                        </div>
-                        <span className="font-semibold text-gray-900">
-                          Mục tiêu
-                        </span>
-                      </div>
-                      <p className="text-sm text-gray-600">75% đạt được</p>
-                    </div>
-                    <div className="bg-indigo-50 rounded-lg p-6 h-32 border border-indigo-200">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
-                          <span className="text-white text-sm">🔧</span>
-                        </div>
-                        <span className="font-semibold text-gray-900">
-                          Tích hợp
-                        </span>
-                      </div>
-                      <p className="text-sm text-gray-600">5 nền tảng</p>
-                    </div>
-                  </div>
-                </div>
+                {/* Image */}
+                <Image
+                  height={500}
+                  width={500}
+                  className="w-full h-full"
+                  alt="hero"
+                  src="/images/hero.png"
+                />
               </div>
             </div>
             {/* Achievement Labels */}

@@ -36,9 +36,6 @@ export default function IndustryApplicationsSection() {
           Tự động tư vấn sản phẩm, trả lời inbox, chốt đơn, báo cáo hiệu suất.
           Phù hợp cho thời trang, F&B, giáo dục, du lịch... Không cần code.
         </p>
-        <button className="bg-red-600 text-white font-medium px-6 py-3 rounded-lg hover:bg-red-700 transition">
-          Đăng ký ngay
-        </button>
 
         {/* Industries grid */}
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">

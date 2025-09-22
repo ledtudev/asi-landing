@@ -1,9 +1,7 @@
-import { useConsultation } from '@/contexts/ConsultationContext';
 import { motion } from 'framer-motion';
 import { Globe, Plane, ShoppingBag, Utensils } from 'lucide-react';
 
 export default function MultiIndustrySection() {
-  const { openConsultation } = useConsultation();
   const industries = [
     {
       icon: ShoppingBag,
@@ -56,20 +54,6 @@ export default function MultiIndustrySection() {
             Tự động tư vấn sản phẩm, trả lời inbox, chốt đơn, báo cáo hiệu suất.
             Phù hợp cho thời trang, F&B, giáo dục, du lịch... Không cần code.
           </p>
-
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={() =>
-              openConsultation(
-                'Ứng dụng đa ngành',
-                'Tìm hiểu cách AI có thể áp dụng cho ngành nghề của bạn',
-              )
-            }
-            className="bg-red-500 hover:bg-red-600 text-white font-semibold px-10 py-4 rounded-lg text-xl shadow-xl hover:shadow-2xl transition-all duration-200"
-          >
-            Đăng ký ngay
-          </motion.button>
         </motion.div>
 
         {/* Industry Cards */}

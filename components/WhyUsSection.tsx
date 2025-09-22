@@ -1,6 +1,7 @@
 import { useConsultation } from '@/contexts/ConsultationContext';
 import { motion } from 'framer-motion';
 import { Headphones, MessageCircle, Star, Wrench } from 'lucide-react';
+import Link from 'next/link';
 
 export default function WhyUsSection() {
   const { openConsultation } = useConsultation();
@@ -29,7 +30,10 @@ export default function WhyUsSection() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-blue-50">
+    <section
+      id="about"
+      className="py-20 bg-gradient-to-b from-white to-blue-50"
+    >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
@@ -71,7 +75,7 @@ export default function WhyUsSection() {
               }
               className="bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-4 rounded-lg text-lg shadow-xl hover:shadow-2xl transition-all duration-200"
             >
-              Đăng ký ngay
+              <Link href="#booking">Đặt lịch tư vấn ngay</Link>
             </motion.button>
           </motion.div>
 

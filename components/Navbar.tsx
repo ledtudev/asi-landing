@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Logo from './Logo';
 
 interface NavbarProps {
   onMobileMenuToggle: () => void;
@@ -14,9 +15,7 @@ export default function Navbar({ onMobileMenuToggle }: NavbarProps) {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">S</span>
-            </div>
+            <Logo className="w-8 h-8 rounded-lg" />
             <span className="text-xl font-bold text-gray-900 tracking-wide">
               ASI
             </span>
@@ -31,29 +30,32 @@ export default function Navbar({ onMobileMenuToggle }: NavbarProps) {
               Giải pháp
             </Link>
             <Link
-              href="#why"
+              href="#customer"
               className="hover:text-gray-900 transition-colors font-medium"
             >
-              Tại sao?
+              Khách hàng
             </Link>
             <Link
-              href="#pricing"
+              href="#about"
               className="hover:text-gray-900 transition-colors font-medium"
             >
-              Bảng giá
+              Về chúng tôi
             </Link>
             <Link
-              href="#services"
+              href="#faq"
               className="hover:text-gray-900 transition-colors font-medium"
             >
-              Dịch vụ bổ sung
+              Hỏi đáp
             </Link>
           </div>
 
           {/* Call-to-action button */}
-          <button className="hidden md:block rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-2 font-semibold text-white shadow-lg hover:opacity-90 transition-all duration-200 hover:shadow-xl">
+          <Link
+            href="#booking"
+            className="hidden md:block rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-2 font-semibold text-white shadow-lg transition-colors duration-200 hover:from-blue-600 hover:to-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+          >
             Nhận tư vấn
-          </button>
+          </Link>
 
           {/* Mobile menu button */}
           <button
