@@ -205,7 +205,7 @@ export default function Testimonials() {
                 />
               ))}
             </div>
-            <div className="flex gap-3">
+            <div className="flex gap-3 cursor-pointer">
               <button
                 onClick={() =>
                   setPage((p) => (p - 1 + totalPages) % totalPages)

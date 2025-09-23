@@ -1,6 +1,6 @@
 import { useConsultation } from '@/contexts/ConsultationContext';
 import { motion } from 'framer-motion';
-import { Clock, MessageCircle, Shield, TrendingUp, Zap } from 'lucide-react';
+import { Clock, Shield, TrendingUp, Zap } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -170,57 +170,6 @@ export default function HeroSection() {
           </motion.div>
         </div>
       </div>
-
-      {/* Zalo Widget */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8, x: 50 }}
-        animate={{ opacity: 1, scale: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 1.2, ease: 'easeOut' }}
-        whileHover={{ scale: 1.01, x: -1 }}
-        className="fixed bottom-6 right-6 z-50 hidden lg:block"
-      >
-        <div className="relative">
-          {/* Zalo Button */}
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={() =>
-              openConsultation(
-                'Chat Zalo',
-                'Kết nối với chúng tôi qua Zalo để được tư vấn trực tiếp',
-              )
-            }
-            className="w-16 h-16 bg-blue-500 hover:bg-blue-600 rounded-full shadow-2xl flex items-center justify-center transition-all duration-200 group"
-          >
-            <MessageCircle className="w-8 h-8 text-white" />
-          </motion.button>
-
-          {/* Notification Badge */}
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.3, delay: 2 }}
-            className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center"
-          >
-            <span className="text-white text-xs font-bold">1</span>
-          </motion.div>
-
-          {/* Tooltip */}
-          <motion.div
-            initial={{ opacity: 0, x: 10 }}
-            whileHover={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3 }}
-            className="absolute right-20 top-1/2 transform -translate-y-1/2 bg-white rounded-lg p-3 shadow-lg border border-gray-200 whitespace-nowrap"
-          >
-            <div className="text-sm font-medium text-gray-900">
-              Chat với chúng tôi
-            </div>
-            <div className="text-xs text-gray-500">Hỗ trợ 24/7</div>
-            {/* Arrow */}
-            <div className="absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-8 border-l-white border-t-4 border-b-4 border-t-transparent border-b-transparent"></div>
-          </motion.div>
-        </div>
-      </motion.div>
 
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">

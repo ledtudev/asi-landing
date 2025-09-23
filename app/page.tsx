@@ -15,6 +15,7 @@ import Sidebar from '@/components/Sidebar';
 import SolutionsSection from '@/components/SolutionsSection';
 import Testimonials from '@/components/Testimonials';
 import WhyUsSection from '@/components/WhyUsSection';
+import ZaloWidget from '@/components/ZaloWidget';
 
 import { useState } from 'react';
 
@@ -27,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div>
       <AnnouncementBar />
       <Navbar onMobileMenuToggle={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
@@ -46,7 +47,8 @@ export default function Home() {
       <BookingSection />
       <CTASection />
       <Footer />
-
+      {/* Zalo Widget */}
+      <ZaloWidget />
       {/* Consultation Popup */}
       {/* <ConsultationPopup
         isOpen={isOpen}
@@ -54,6 +56,6 @@ export default function Home() {
         title={title}
         description={description}
       /> */}
-    </>
+    </div>
   );
 }

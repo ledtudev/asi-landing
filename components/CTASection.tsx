@@ -81,8 +81,8 @@ export default function CTASection() {
           viewport={{ once: true }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
         >
-          <button
-            onClick={() =>
+          <motion.button
+            onHoverStart={() =>
               openConsultation(
                 'Bắt đầu ngay',
                 'Để lại thông tin để chúng tôi tư vấn giải pháp AI Chatbot phù hợp nhất cho doanh nghiệp của bạn',
@@ -94,7 +94,7 @@ export default function CTASection() {
               <span>Dùng thử miễn phí</span>
             </Link>
             <ArrowRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
-          </button>
+          </motion.button>
 
           <Link
             href="#booking"
