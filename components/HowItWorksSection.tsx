@@ -105,30 +105,18 @@ export default function HowItWorksSection() {
             </AnimatePresence>
 
             {/* Desktop Image */}
-            <div className="hidden lg:flex w-full h-full justify-end items-center">
-              <div className="w-1/2 h-1/2">
+            <div className="hidden lg:flex w-full justify-end items-center">
+              <div className="w-[60%] max-w-md">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={activeStep}
                     src={steps.find((s) => s.id === activeStep)?.image}
                     alt={`Bước ${activeStep}`}
-                    initial={{
-                      opacity: 0,
-                      y: 30, // slide up from below
-                      scale: 0.97,
-                    }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                      scale: 1,
-                    }}
-                    exit={{
-                      opacity: 0,
-                      y: -30, // slide up while fading out
-                      scale: 0.97,
-                    }}
+                    initial={{ opacity: 0, y: 30, scale: 0.97 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -30, scale: 0.97 }}
                     transition={{ duration: 0.4, ease: 'easeInOut' }}
-                    className="w-full h-full object-cover rounded-2xl shadow-lg"
+                    className="w-full h-auto rounded-2xl shadow-lg"
                   />
                 </AnimatePresence>
               </div>
@@ -188,10 +176,10 @@ const StepBlock = forwardRef<HTMLDivElement, StepBlockProps>(
           <div
             className={`
               flex items-center justify-center rounded-full
-              bg-gradient-to-r from-[#5494cc] to-[#286dae]  
+              bg-gradient-to-r from-[#5494cc] to-[#286dae]
               text-white shadow-lg
               relative z-10
-              w-12 h-12 sm:w-13 sm:h-13
+              w-12 h-12 sm:w-14 sm:h-14
               ${step.id === 1 ? 'mt-4 sm:mt-8' : 'mt-0'}
             `}
           >
