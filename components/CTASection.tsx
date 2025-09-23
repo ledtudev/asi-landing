@@ -3,6 +3,7 @@
 import { useConsultation } from '@/contexts/ConsultationContext';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Clock, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
 export default function CTASection() {
   const { openConsultation } = useConsultation();
@@ -89,17 +90,19 @@ export default function CTASection() {
             }
             className="bg-white text-blue-700 font-bold px-8 py-4 rounded-xl text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center gap-2 group"
           >
-            <span>Dùng thử miễn phí</span>
+            <Link href="#booking">
+              <span>Dùng thử miễn phí</span>
+            </Link>
             <ArrowRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
           </button>
 
-          <a
+          <Link
             href="#booking"
             className="border-2 border-white text-white font-semibold px-8 py-4 rounded-xl text-lg hover:bg-white hover:text-blue-700 transition-all duration-300 flex items-center justify-center gap-2"
           >
             <Clock className="w-5 h-5" />
-            <span>Đặt lịch demo</span>
-          </a>
+            <span>Đặt lịch tư vấn</span>
+          </Link>
         </motion.div>
 
         {/* Trust indicators - Startup style */}

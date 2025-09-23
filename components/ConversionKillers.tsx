@@ -22,7 +22,10 @@ export default function ConversionKillers() {
       <div className="max-w-5xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
           Điều gì đang{' '}
-          <span className="text-indigo-600">giết chết chuyển đổi</span> của bạn?
+          <span className="bg-gradient-to-r from-[#7a6158] to-[#1677FF]  bg-clip-text text-transparent">
+            giết chết chuyển đổi
+          </span>{' '}
+          của bạn?
         </h2>
         <p className="text-gray-600 mt-3">
           Cùng khám phá nguyên nhân khiến khách hàng không ra quyết định.

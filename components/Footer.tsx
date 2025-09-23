@@ -18,7 +18,7 @@ export default function Footer() {
             className="space-y-6"
           >
             <div className="flex items-center space-x-3">
-              <Logo className="w-10 w-10 rounded-lg" />
+              <Logo className="w-10 h-10 rounded-lg" />
 
               <span className="text-2xl font-bold text-blue-600">
                 ASI Smart Sales
@@ -38,9 +38,7 @@ export default function Footer() {
                 <span className="font-medium">Tên viết tắt: </span>
                 CTTNHH TVGP BÁN HÀNG THÔNG MINH ASI
               </p>
-              <p>
-                <span className="font-medium">MST: </span>0111020361
-              </p>
+
               <div className="flex items-start space-x-3 mt-2">
                 <MapPin className="w-5 h-5 text-gray-500 mt-1 flex-shrink-0" />
                 <p>

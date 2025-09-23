@@ -12,7 +12,10 @@ export default function BookingSection() {
   }, []);
 
   return (
-    <section id="booking" className="relative bg-white">
+    <section
+      id="booking"
+      className="relative bg-white max-w-screen overflow-x-hidden"
+    >
       <div className="mx-auto max-w-6xl px-6 py-16">
         <Cal
           namespace="30min"

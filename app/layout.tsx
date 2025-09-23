@@ -36,7 +36,6 @@ export const metadata: Metadata = {
     'Công ty TNHH tư vấn và giải pháp bán hàng thông minh ASI',
     'ASI SMART SALES CONSULTING AND SOLUTIONS COMPANY LIMITED',
     'CTTNHH TVGP BÁN HÀNG THÔNG MINH ASI',
-    '0111020361',
     'AI',
     'chatbot',
     'automation',

@@ -14,7 +14,6 @@ import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
 import SolutionsSection from '@/components/SolutionsSection';
 import Testimonials from '@/components/Testimonials';
-import TrustBadges from '@/components/TrustBadges';
 import WhyUsSection from '@/components/WhyUsSection';
 
 import { useState } from 'react';
@@ -33,11 +32,11 @@ export default function Home() {
       <Navbar onMobileMenuToggle={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
       <Hero />
-      <TrustBadges />
-      {/* <AIChatbotSection /> */}
-      <SolutionsSection />
       <ConversionKillers />
       <HowItWorksSection />
+      {/* <AIChatbotSection /> */}
+      {/* <TrustBadges /> */}
+      <SolutionsSection />
       <WhyUsSection />
       <IndustryApplicationsSection />
       <Testimonials />
