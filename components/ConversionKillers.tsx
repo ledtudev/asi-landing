@@ -40,7 +40,9 @@ export default function ConversionKillers() {
                 }`}
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-700">{t}</span>
+                  <span className="text-gray-700 text-left text-sm lg:text-xl">
+                    {t}
+                  </span>
                 </div>
                 <X className="text-gray-300 w-5 h-5 cursor-pointer" />
               </motion.div>
