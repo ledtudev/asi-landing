@@ -6,8 +6,17 @@ import { useEffect } from 'react';
 export default function BookingSection() {
   useEffect(() => {
     (async function () {
-      const cal = await getCalApi({ namespace: '30min' });
-      cal('ui', { hideEventTypeDetails: false, layout: 'month_view' });
+      const cal = await getCalApi({
+        namespace: 'asi-giai-phap-chatbot-ai-tu-van',
+      });
+      cal('ui', {
+        cssVarsPerTheme: {
+          light: { 'cal-brand': '#000000' },
+          dark: { 'cal-brand': '#fafafa' },
+        },
+        hideEventTypeDetails: false,
+        layout: 'month_view',
+      });
     })();
   }, []);
 
@@ -18,8 +27,8 @@ export default function BookingSection() {
     >
       <div className="mx-auto max-w-6xl px-6 py-16">
         <Cal
-          namespace="30min"
-          calLink="le-đ.-tu-ovlmd8/30min"
+          namespace="asi-giai-phap-chatbot-ai-tu-van"
+          calLink="le-đ.-tu-ovlmd8/asi-giai-phap-chatbot-ai-tu-van"
           style={{ width: '100%', height: '100%', overflow: 'scroll' }}
           config={{ layout: 'month_view' }}
         />

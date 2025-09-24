@@ -111,19 +111,6 @@ export default function SolutionsSection() {
             quản trị nội bộ... Dễ dàng triển khai, ứng dụng và tạo workflow chỉ
             với một click.
           </p>
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={() =>
-              openConsultation(
-                'Giải pháp nổi bật',
-                'Tìm hiểu các giải pháp AI phù hợp nhất cho doanh nghiệp của bạn',
-              )
-            }
-            className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold px-10 py-4 rounded-lg text-xl shadow-2xl hover:shadow-3xl transition-all duration-200"
-          >
-            Đăng ký ngay
-          </motion.button>
         </motion.div>
         <div className="mb-32"></div>
         {/* Individual Solution Sections */}
