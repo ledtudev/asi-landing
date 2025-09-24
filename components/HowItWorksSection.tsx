@@ -100,7 +100,7 @@ export default function HowItWorksSection() {
             <div className="hidden lg:flex w-full justify-end items-center">
               <div className="w-[60%] max-w-md">
                 <AnimatePresence mode="wait">
-                  <motion.img
+                 <motion.img
                     key={activeStep}
                     src={steps.find((s) => s.id === activeStep)?.image}
                     alt={`Bước ${activeStep}`}
@@ -113,7 +113,7 @@ export default function HowItWorksSection() {
                 </AnimatePresence>
               </div>
             </div>
-          </div>
+          </div> 
 
           {/* Steps + Timeline */}
           <div className="relative">

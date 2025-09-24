@@ -122,8 +122,8 @@ export default function HeroSection() {
               <div className="flex">
                 {/* Image */}
                 <Image
-                  height={500}
-                  width={500}
+                  height={2000}
+                  width={2000}
                   className="w-full h-full"
                   alt="hero"
                   src="/images/hero.png"
