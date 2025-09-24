@@ -1,7 +1,7 @@
 'use client';
 
 import { AnimatePresence, motion, useInView } from 'framer-motion';
-import { Rocket, Settings, Users, Zap } from 'lucide-react';
+import { Rocket, Settings, Users } from 'lucide-react';
 import { forwardRef, useEffect, useRef, useState } from 'react';
 
 type Step = {
@@ -33,14 +33,6 @@ const steps: Step[] = [
     description: 'Bắt đầu dự án với tự động hóa và quy trình mạnh mẽ.',
     icon: Rocket,
     image: '/images/solution-img-3.png',
-  },
-  {
-    id: 4,
-    title: 'Mở rộng',
-    description:
-      'Tăng trưởng nhanh hơn với phân tích, báo cáo và tính năng nâng cao.',
-    icon: Zap,
-    image: '/images/solution-img-4.png',
   },
 ];
 

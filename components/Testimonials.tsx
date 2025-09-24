@@ -127,18 +127,6 @@ export default function Testimonials() {
               </motion.div>
             ))}
           </div>
-
-          {/* Mobile Indicators */}
-          <div className="flex justify-center mt-4 gap-2">
-            {DATA.map((_, i) => (
-              <div
-                key={i}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  i === Math.floor(page) ? 'bg-blue-600 w-4' : 'bg-gray-300'
-                }`}
-              />
-            ))}
-          </div>
         </div>
 
         {/* Tablet/Desktop: Horizontal slider */}

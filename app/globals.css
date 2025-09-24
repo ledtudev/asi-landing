@@ -76,3 +76,19 @@ body {
     #1cb5e0
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+@layer utilities {
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    /* Tăng thời gian để chạy chậm hơn */
+    animation: scroll 60s linear infinite;
+  }
+}

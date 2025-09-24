@@ -2,11 +2,27 @@
 
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import Image from 'next/image';
 import Logo from './Logo';
+
+const partners = [
+  {
+    name: 'Đối tác 1',
+    logo: '/images/3-do.png',
+  },
+  {
+    name: 'Đối tác 2',
+    logo: '/images/access-trade.png',
+  },
+  {
+    name: 'Đối tác 3',
+    logo: '/images/dc-group.png',
+  },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-white py-16">
+    <footer className="bg-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Company Info */}
@@ -131,13 +147,39 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* Copyright */}
+        {/* Partners Section */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-12 pt-8 border-t border-gray-200 text-center"
+          className="mt-16 pt-12 border-t border-gray-200"
+        >
+          <h3 className="text-xl font-bold text-gray-900 text-center mb-8">
+            Đối Tác Của Chúng Tôi
+          </h3>
+          <div className="flex justify-center items-center gap-x-12 sm:gap-x-16 gap-y-8 flex-wrap">
+            {partners.map((partner, index) => (
+              <div key={index} className="flex justify-center">
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  width={130}
+                  height={50}
+                  className="object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Copyright */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-16 pt-8 border-t border-gray-200 text-center"
         >
           <p className="text-gray-500 text-sm">
             © 2024 Công ty TNHH tư vấn và giải pháp bán hàng thông minh ASI. All

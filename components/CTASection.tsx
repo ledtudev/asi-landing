@@ -79,7 +79,7 @@ export default function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 cursor-pointer"
         >
           <motion.button
             onHoverStart={() =>
@@ -90,10 +90,10 @@ export default function CTASection() {
             }
             className="bg-white text-blue-700 font-bold px-8 py-4 rounded-xl text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center gap-2 group"
           >
-            <Link href="#booking">
+            <Link href="/zalo">
               <span>Dùng thử miễn phí</span>
             </Link>
-            <ArrowRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
+            <ArrowRight className="w-5 h-5 cursor-pointer transition-transform duration-200 group-hover:translate-x-1" />
           </motion.button>
 
           <Link

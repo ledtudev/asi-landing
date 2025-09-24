@@ -87,7 +87,7 @@ export default function SolutionsSection() {
   return (
     <section
       id="solutions"
-      className="py-20 bg-gradient-to-b from-blue-50 to-white"
+      className="py-20 bg-gradient-to-b from-blue-50 to-white max-w-screen overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}

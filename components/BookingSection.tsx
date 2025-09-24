@@ -14,7 +14,7 @@ export default function BookingSection() {
   return (
     <section
       id="booking"
-      className="relative bg-white max-w-screen overflow-x-hidden"
+      className="relative bg-white max-w-screen overflow-x-hidden pt-20"
     >
       <div className="mx-auto max-w-6xl px-6 py-16">
         <Cal

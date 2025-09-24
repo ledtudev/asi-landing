@@ -28,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <>
       <AnnouncementBar />
       <Navbar onMobileMenuToggle={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
@@ -43,6 +43,7 @@ export default function Home() {
       <Testimonials />
       {/* <PricingSection /> */}
       <AdditionalServicesSection />
+      {/* <PartnersMarquee /> */}
       <FAQ />
       <BookingSection />
       <CTASection />
@@ -56,6 +57,6 @@ export default function Home() {
         title={title}
         description={description}
       /> */}
-    </div>
+    </>
   );
 }
