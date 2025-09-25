@@ -81,15 +81,12 @@ export default function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() =>
-                openConsultation(
-                  'Đăng ký ngay',
-                  'Để lại thông tin để chúng tôi tư vấn giải pháp AI phù hợp nhất cho doanh nghiệp của bạn',
-                )
-              }
-              className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold px-8 py-4 rounded-lg text-lg shadow-xl hover:shadow-2xl transition-all duration-200"
+              className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 
+             text-white font-semibold px-8 py-4 rounded-lg text-lg 
+             shadow-xl hover:shadow-2xl transition-all duration-200  
+             focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-white"
             >
-              <Link href="#booking"> Đăng ký ngay</Link>
+              <Link href="#booking">Đăng ký ngay</Link>
             </motion.button>
           </motion.div>
 

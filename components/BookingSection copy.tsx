@@ -122,7 +122,7 @@ export default function BookingSection() {
             <div className="flex items-center justify-between px-6 py-4">
               <button
                 onClick={goPrevMonth}
-                className="px-3 py-1.5 text-sm rounded-md border border-gray-200 hover:bg-gray-50"
+                className="px-3 py-1.5 text-sm rounded-md border border-gray-200 hover:bg-gray-50 "
               >
                 Tháng trước
               </button>

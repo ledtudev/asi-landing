@@ -1,31 +1,12 @@
 import { ConsultationProvider } from '@/contexts/ConsultationContext';
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono, Inter, Poppins } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-});
-
-const poppins = Poppins({
-  weight: ['600', '700'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
-});
+const inter = Inter({ subsets: ['latin', 'vietnamese'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://asi.example.com'), // Thay bằng domain thật của bạn
+  metadataBase: new URL('https://salingbot.com'),
   title: {
     default: 'Công ty TNHH tư vấn và giải pháp bán hàng thông minh ASI',
     template: '%s | ASI Smart Sales',
@@ -35,33 +16,31 @@ export const metadata: Metadata = {
   keywords: [
     'Công ty TNHH tư vấn và giải pháp bán hàng thông minh ASI',
     'ASI SMART SALES CONSULTING AND SOLUTIONS COMPANY LIMITED',
-    'CTTNHH TVGP BÁN HÀNG THÔNG MINH ASI',
     'AI',
     'chatbot',
     'automation',
     'tự động hóa',
     'doanh nghiệp',
-    'SMB',
     'Việt Nam',
     'Hà Nội',
   ],
   authors: [
     {
       name: 'Công ty TNHH tư vấn và giải pháp bán hàng thông minh ASI',
-      url: 'https://asi.example.com',
+      url: 'https://salingbot.com',
     },
   ],
   openGraph: {
     type: 'website',
     locale: 'vi_VN',
-    url: 'https://asi.example.com',
+    url: 'https://salingbot.com',
     siteName: 'Công ty TNHH tư vấn và giải pháp bán hàng thông minh ASI',
     title: 'ASI - Giải pháp AI & Chatbot cho doanh nghiệp',
     description:
       'Tăng trưởng bằng AI: Chatbot hỗ trợ khách hàng, tự động hóa và tích hợp nhanh từ ASI.',
     images: [
       {
-        url: '/images/aichatbot.png',
+        url: '/images/solution-img-1.png',
         width: 1200,
         height: 630,
         alt: 'ASI - AI Solutions',
@@ -73,7 +52,7 @@ export const metadata: Metadata = {
     title: 'ASI - AI Solutions & Chatbots',
     description:
       'Triển khai chatbot AI, tự động hóa quy trình và giải pháp AI cho SMBs.',
-    images: ['/images/aichatbot.png'],
+    images: ['/images/solution-img-1.png'],
   },
   icons: {
     icon: [
@@ -97,7 +76,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://asi.example.com',
+    canonical: 'https://salingbot.com',
   },
   robots: {
     index: true,
@@ -110,11 +89,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Công ty TNHH tư vấn và giải pháp bán hàng thông minh ASI',
+    alternateName: 'ASI SMART SALES CONSULTING AND SOLUTIONS COMPANY LIMITED',
+    url: 'https://asi.example.com', // <<-- THAY BẰNG DOMAIN THẬT
+    logo: 'https://asi.example.com/logo/asi-icon-192x192.png', // <<-- THAY BẰNG DOMAIN THẬT
+    email: 'vnasi.group@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Số nhà 7A ngõ 93, Tổ 2, Phường Hoàng Văn Thụ',
+      addressLocality: 'Quận Hoàng Mai',
+      addressRegion: 'Hà Nội',
+      postalCode: '100000',
+      addressCountry: 'VN',
+    },
+    vatID: '0111020361',
+  };
+
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased ${inter.variable} ${poppins.variable} scroll-smooth`}
-      >
+    <html lang="vi" className="scroll-smooth">
+      <body className={inter.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ConsultationProvider>{children}</ConsultationProvider>
       </body>
     </html>
