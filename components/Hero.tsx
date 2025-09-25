@@ -1,52 +1,43 @@
-import { useConsultation } from '@/contexts/ConsultationContext';
 import { motion } from 'framer-motion';
-import { Clock, Shield, TrendingUp, Zap } from 'lucide-react';
+import { BookOpen, Bot, Heart, ShoppingCart, Users } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function HeroSection() {
-  const { openConsultation } = useConsultation();
   const achievements = [
     {
-      icon: TrendingUp,
-      title: 'Giảm 22% chi phí vận hành',
-      description: 'Doanh nghiệp tiết kiệm trung bình 1,2 tỷ VNĐ/năm',
-      color: 'text-gray-900',
-      bgColor: 'bg-white',
-      borderColor: 'border-gray-200',
-      position: '-top-16 -left-20',
+      icon: Bot,
+      title: 'Tự Động Lên Đơn',
+      description: 'Chuyển hội thoại thành đơn hàng tức thì.',
+      position: 'top-[15%] right-[65%] 2xl:right-[80%] 2xl:w-[430px] w-[350px]',
     },
     {
-      icon: Zap,
-      title: 'Hiệu suất tăng 18%',
-      description: 'Đội ngũ xử lý thêm 500+ yêu cầu mỗi tháng',
-      color: 'text-gray-900',
-      bgColor: 'bg-white',
-      borderColor: 'border-gray-200',
-      position: 'top-20 -right-28',
+      icon: BookOpen,
+      title: 'CSKH 24/7',
+      description: 'AI phản hồi tức thời, tăng tỷ lệ giữ chân khách.',
+      position: 'top-[35%] right-[65%] 2xl:right-[80%] 2xl:w-[430px] w-[350px]',
     },
     {
-      icon: Clock,
-      title: 'Rút ngắn 55% thời gian xử lý',
-      description: 'Quy trình giảm từ 14 ngày xuống còn 6 ngày',
-      color: 'text-gray-900',
-      bgColor: 'bg-white',
-      borderColor: 'border-gray-200',
-      position: 'bottom-16 -right-24',
+      icon: Heart,
+      title: 'Phân Tích Cảm Xúc',
+      description: 'Thấu hiểu tâm lý, phản hồi đúng "gu" khách hàng.',
+      position: 'top-[20%] left-[65%] 2xl:left-[80%] 2xl:w-[430px] w-[350px]',
     },
     {
-      icon: Shield,
-      title: '99.95% độ tin cậy',
-      description: 'Downtime dưới 20 phút/năm',
-      color: 'text-gray-900',
-      bgColor: 'bg-white',
-      borderColor: 'border-gray-200',
-      position: 'top-1/2 -left-28',
+      icon: ShoppingCart,
+      title: 'Chuyên Gia Sản Phẩm',
+      description: 'Huấn luyện AI bằng chính kiến thức sản phẩm',
+      position: 'top-[40%] left-[65%] 2xl:left-[80%] 2xl:w-[430px] w-[350px]',
+    },
+    {
+      icon: Users,
+      title: 'Tối Ưu Nhân Sự',
+      description: 'Giảm workload, tinh gọn quy trình làm việc.',
+      position: 'top-[60%] left-[65%] 2xl:left-[80%] 2xl:w-[430px] w-[350px]',
     },
   ];
-
   return (
-    <section className="relative min-h-screen pt-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 myGradient">
+    <section className="relative min-h-screen max-w-screen overflow-hidden pt-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 myGradient">
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
         <div className="text-center">
           {/* Main headline */}
@@ -54,10 +45,12 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-[9vw] leading-[1.15] sm:text-5xl sm:leading-tight md:text-7xl font-bold text-white mb-6 break-words"
+            className="text-[9vw]  leading-[1.15] sm:text-5xl sm:leading-tight md:text-7xl font-bold text-white mb-6 break-words"
           >
             Chuyển đổi doanh nghiệp{' '}
-            <span className="text-cyan-400">bằng Trí tuệ nhân tạo</span>
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
+              bằng Trí tuệ nhân tạo
+            </span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -67,8 +60,8 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
             className="text-base sm:text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed"
           >
-            Sản phẩm của chúng tôi là bộ giải pháp AI tổng thể, bao gồm nhiều
-            Module hỗ trợ doanh nghiệp từ bán hàng đến quản trị doanh nghiệp
+            Giải pháp AI tổng thể giúp doanh nghiệp tăng trưởng doanh thu, nâng
+            cao hiệu suất và tối ưu vận hành
           </motion.p>
 
           {/* CTA Button */}
@@ -101,13 +94,8 @@ export default function HeroSection() {
               {/* Dashboard Header */}
               <div className="bg-blue-50 px-6 py-4 border-b border-gray-200">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                      <span className="text-white font-bold text-sm">S</span>
-                    </div>
-                    <span className="font-semibold text-gray-900">ASI AI</span>
-                  </div>
-                  <div className="flex items-center space-x-4">
+                  <span className="font-semibold text-gray-900">ASI AI</span>
+                  <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
                     <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
                     <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
@@ -116,47 +104,52 @@ export default function HeroSection() {
               </div>
 
               {/* Dashboard Content */}
-              <div className="flex">
-                {/* Image */}
-                <Image
-                  height={2000}
-                  width={2000}
-                  className="w-full h-full"
-                  alt="hero"
-                  src="/images/hero.png"
-                />
-              </div>
+              <Image
+                height={2000}
+                width={2000}
+                className="w-full h-full"
+                alt="hero"
+                src="/images/hero.png"
+              />
             </div>
+
             {/* Achievement Labels */}
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.8 + index * 0.1,
-                  ease: 'easeOut',
+                initial={{
+                  opacity: 0,
+                  scale: 0.8,
+                  y: 40,
                 }}
-                whileHover={{ scale: 1.02, y: -2 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.9,
+                  ease: [0.25, 0.1, 0.25, 1],
+                  delay: 0.3 + index * 0.2,
+                }}
+                whileHover={{
+                  boxShadow: '0 12px 30px rgba(0,0,0,0.11)',
+                }}
                 className={`absolute ${achievement.position} hidden lg:block`}
               >
                 <div
-                  className={`${achievement.bgColor} ${achievement.borderColor} rounded-2xl p-4 border-2 shadow-lg backdrop-blur-sm bg-white/80 hover:shadow-xl transition-all duration-300`}
+                  className="rounded-xl p-4 border border-gray-200 shadow-md 
+                       bg-gradient-to-br from-white to-gray-50 hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="flex items-center space-x-3">
-                    <div
-                      className={`w-10 h-10 ${achievement.bgColor} rounded-xl flex items-center justify-center`}
-                    >
-                      <achievement.icon
-                        className={`w-5 h-5 ${achievement.color}`}
-                      />
+                  <div className="flex items-center gap-2">
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gray-100">
+                      <achievement.icon className="w-5 h-5 text-gray-900" />
                     </div>
                     <div>
-                      <div className={`text-lg font-bold ${achievement.color}`}>
+                      <div className="text-sm text-left font-semibold text-black">
                         {achievement.title}
                       </div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-left text-gray-600">
                         {achievement.description}
                       </div>
                     </div>

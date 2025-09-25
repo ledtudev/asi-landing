@@ -65,15 +65,8 @@ export default function WhyUsSection() {
             </div>
 
             <motion.button
-              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() =>
-                openConsultation(
-                  'Tại sao chọn chúng tôi',
-                  'Tìm hiểu lý do tại sao hàng nghìn doanh nghiệp tin tưởng chúng tôi',
-                )
-              }
-              className="bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-4 rounded-lg text-lg shadow-xl hover:shadow-2xl transition-all duration-200"
+              className="cursor-pointer  bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold px-8 py-4 rounded-lg text-lg shadow-xl hover:shadow-2xl transition-all duration-200"
             >
               <Link href="#booking">Đặt lịch tư vấn ngay</Link>
             </motion.button>

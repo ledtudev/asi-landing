@@ -1,9 +1,7 @@
-import { useConsultation } from '@/contexts/ConsultationContext';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export default function SolutionsSection() {
-  const { openConsultation } = useConsultation();
   const solutions = [
     {
       title: 'AI Chatbot Thông Minh',
